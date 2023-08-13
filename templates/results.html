@@ -73,11 +73,16 @@
        background-color: #f2f2f2;
    }
 
-   .sticky-header {
+   .sticky-column {
             position: sticky;
-            top: 0;
+            left: 0;
             z-index: 1;
-            background-color: #f2f2f2;
+            background-color: #f2f2f2; /* Match the background color of other td elements */
+        }
+
+        .sticky-column::first-of-type {
+            width: 150px;
+        }
 
         @media (min-width: 768px) {
 }
@@ -103,8 +108,8 @@
     <div class="table-container">
     <table>
         <tr>
-            <th class="sticky-header">Item number</th>
-    <th class="sticky-header">Name</th>
+             <td class="sticky-column">Item number</td>
+    <td class="sticky-column">Name</td>
             <th>Serving Size</th>
             <th>Calories</th>
             <th>Total Fat</th>
