@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutritional Database - Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        @media (min-width: 768px) {
+}
+
+@media (max-width: 767px) {
+    form {
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>Results</h1>
+    <table>
+        <tr>
+            <th>Item number</th>
+            <th>Name</th>
+            <th>Serving Size</th>
+            <th>Calories</th>
+            <th>Total Fat</th>
+            <th>Saturated Fat</th>
+            <th>Cholesterol</th>
+            <th>Sodium</th>
+            <th>Choline</th>
+            <th>Folate</th>
+            <th>Folic Acid</th>
+            <th>Niacin</th>
+            <th>Pantothenic Acid</th>
+            <th>Riboflavin</th>
+            <th>Thiamin</th>
+            <th>Vitamin A</th>
+            <th>Vitamin A Retinol Activity Equivalents</th>
+            <th>Carotene Alpha</th>
+            <th>Carotene Beta</th>
+            <th>Cryptoxanthin Beta</th>
+            <th>Lutein Zeaxanthin</th>
+            <th>Lycopene</th>
+            <th>Vitamin B12</th>
+            <th>Vitamin B6</th>
+            <th>Vitamin C</th>
+            <th>Vitamin D</th>
+            <th>Vitamin E</th>
+            <th>Tocopherol Alpha</th>
+            <th>Vitamin K</th>
+            <th>Calcium</th>
+            <th>Copper</th>
+            <th>Iron</th>
+            <th>Magnesium</th>
+            <th>Manganese</th>
+            <th>Phosphorous</th>
+            <th>Potassium</th>
+            <th>Selenium</th>
+            <th>Zinc</th>
+            <th>Protein</th>
+            <th>Alanine</th>
+            <th>Arginine</th>
+            <th>Aspartic Acid</th>
+            <th>Cystine</th>
+            <th>Glutamic Acid</th>
+            <th>Glycine</th>
+            <th>Histidine</th>
+            <th>Hydroxyproline</th>
+            <th>Isoleucine</th>
+            <th>Leucine</th>
+            <th>Lysine</th>
+            <th>Methionine</th>
+            <th>Phenylalanine</th>
+            <th>Proline</th>
+            <th>Serine</th>
+            <th>Threonine</th>
+            <th>Tryptophan</th>
+            <th>Tyrosine</th>
+            <th>Valine</th>
+            <th>Carbohydrate</th>
+            <th>Fiber</th>
+            <th>Sugars</th>
+            <th>Fructose</th>
+            <th>Galactose</th>
+            <th>Glucose</th>
+            <th>Lactose</th>
+            <th>Maltose</th>
+            <th>Sucrose</th>
+            <th>Fat</th>
+            <th>Saturated Fatty Acids</th>
+            <th>Monounsaturated Fatty Acids</th>
+            <th>Polyunsaturated Fatty Acids</th>
+            <th>Fatty Acids Total Trans</th>
+            <th>Alcohol</th>
+            <th>Ash</th>
+            <th>Caffeine</th>
+            <th>Theobromine</th>
+            <th>Water</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for value in row %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

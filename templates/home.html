@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutritional Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+@media (min-width: 768px) {
+}
+
+@media (max-width: 767px) {
+    form {
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+
+</html>
+</style>
+</head>
+<body>
+    <form action="/search" method="POST">
+        <label for="food-item">Enter Food Item:</label>
+        <input type="text" id="food-item" name="food-item" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
