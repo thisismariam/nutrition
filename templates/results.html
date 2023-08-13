@@ -73,6 +73,12 @@
        background-color: #f2f2f2;
    }
 
+   .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: #f2f2f2;
+
         @media (min-width: 768px) {
 }
 
@@ -97,8 +103,8 @@
     <div class="table-container">
     <table>
         <tr>
-            <th>Item number</th>
-            <th>Name</th>
+            <th class="sticky-header">Item number</th>
+    <th class="sticky-header">Name</th>
             <th>Serving Size</th>
             <th>Calories</th>
             <th>Total Fat</th>
