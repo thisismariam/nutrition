@@ -61,6 +61,18 @@
             background-color: #555;
         }
 
+         .table-container {
+       overflow-y: auto; /* Enable vertical scrolling */
+       max-height: 600px; /* Adjust the max height as needed */
+   }
+
+
+   .table-container th {
+       position: sticky;
+       top: 0;
+       background-color: #f2f2f2;
+   }
+
         @media (min-width: 768px) {
 }
 
@@ -82,6 +94,7 @@
 </head>
 <body>
     <h1>Results</h1>
+    <div class="table-container">
     <table>
         <tr>
             <th>Item number</th>
