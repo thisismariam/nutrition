@@ -67,22 +67,24 @@
    }
 
 
-   .table-container th {
-       position: sticky;
-       top: 0;
-       background-color: #f2f2f2;
-   }
+   .table-container {
+        display: flex;
+        width: 100%;
+    }
 
-   .sticky-column {
-            position: sticky;
-            left: 0;
-            z-index: 1;
-            background-color: #f2f2f2; /* Match the background color of other td elements */
-        }
+    .sticky-columns {
+        width: 15%; /* Adjust the width as needed */
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-color: #f2f2f2;
+    }
 
-        .sticky-column::first-of-type {
-            width: 150px;
-        }
+    .scrolling-data {
+        width: 85%; /* Adjust the width as needed */
+        margin-left: 15%; /* Match the width of the sticky columns */
+    }
 
         @media (min-width: 768px) {
 }
@@ -104,14 +106,24 @@
     </style>
 </head>
 <body>
-    <h1>Results</h1>
-    <div class="table-container">
-    <table>
-        <tr>
-             <td class="sticky-column">Item number</td>
-    <td class="sticky-column">Name</td>
-            <th>Serving Size</th>
-            <th>Calories</th>
+   <h1>Results</h1>
+   <div class="table-container">
+       <table class="sticky-columns">
+           <tr>
+               <th>Item number</th>
+               <th>Name</th>
+           </tr>
+           {% for row in data %}
+           <tr>
+               <td>{{ row[0] }}</td>
+               <td>{{ row[1] }}</td>
+           </tr>
+           {% endfor %}
+       </table>
+       <table class="scrolling-data">
+           <tr>
+               <th>Serving Size</th>
+               <th>Calories</th>
             <th>Total Fat</th>
             <th>Saturated Fat</th>
             <th>Cholesterol</th>
