@@ -4,110 +4,111 @@
     <title>Nutritional Database - Results</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 0;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
 
-    h1 {
-        text-align: center;
-        color: #333;
-        margin-top: 30px;
-    }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: lightgray;
+  }
+  th:first-child,
+  th:nth-child(2),
+  td:first-child,
+  td:nth-child(2) {
+    position: sticky;
+    left: 0;
+    background-color: white;
+  }
+  th:nth-child(1) {
+    z-index: 2;
+  }
+
+  tr:first-child {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+
+        @media (min-width: 768px) {
+}
+
+@media (max-width: 767px) {
+    form {
         margin-top: 20px;
     }
 
-    th, td {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    form {
-        text-align: center;
-        margin-top: 50px;
-    }
-
     input[type="text"] {
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        outline: none;
+        padding: 5px;
     }
 
     button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+        padding: 5px 10px;
+        font-size: 14px;
     }
-
-    button:hover {
-        background-color: #555;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
-
-    th {
-        background-color: lightgray;
-    }
-
-    tr:first-child {
-        position: sticky;
-        top: 0;
-        background-color: white;
-    }
-
-    th:first-child,
-    td:first-child {
-        position: sticky;
-        left: 0;
-        background-color: white;
-    }
-
-    th:nth-child(2),
-    td:nth-child(2) {
-        position: sticky;
-        left: 150px; /* Adjust this value based on your column width */
-        background-color: white;
-    }
-
-    th:nth-child(1) {
-        z-index: 2;
-    }
-
-    @media (min-width: 768px) {
-        /* ... media queries ... */
-    }
-
-    @media (max-width: 767px) {
-        /* ... media queries ... */
-    }
-
+}
     </style>
 </head>
 <body>
