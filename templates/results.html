@@ -61,30 +61,70 @@
             background-color: #555;
         }
 
-         .table-container {
-       overflow-y: auto; /* Enable vertical scrolling */
-       max-height: 600px; /* Adjust the max height as needed */
-   }
+/* Style for the container that holds both tables */
+.table-container {
+    display: flex;
+    overflow-x: auto;
+}
 
+/* Style for the first table with sticky columns */
+.sticky-columns {
+    flex: 0 0 auto;
+    min-width: auto; /* Adjust as needed */
+    border-collapse: collapse;
+}
 
-   .table-container {
-        display: flex;
-        width: 100%;
-    }
+/* Style for the second table with scrollable columns */
+.scrollable {
+    flex: 1 1 auto;
+    min-width: auto; /* Adjust as needed */
+    border-collapse: collapse;
+}
 
-    .sticky-columns {
-        width: 15%; /* Adjust the width as needed */
-        position: sticky;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        background-color: #f2f2f2;
-    }
+/* Style for table headers */
+table th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
 
-    .scrolling-data {
-        width: 85%; /* Adjust the width as needed */
-        margin-left: 15%; /* Match the width of the sticky columns */
-    }
+/* Style for table cells */
+table td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Styling to make the first two columns sticky */
+.sticky-columns th,
+.sticky-columns td {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: #f2f2f2;
+}
+
+/* Styling for the rest of the columns */
+.scrollable th,
+.scrollable td {
+    background-color: #fff;
+}
+
+/* Hide vertical scrollbar on the first table */
+.sticky-columns {
+    overflow-y: hidden;
+}
+
+/* Hide horizontal scrollbar on both tables */
+.table-container {
+    overflow-x: hidden;
+}
+
+/* Show horizontal scrollbar when needed */
+.table-container:hover {
+    overflow-x: auto;
+}
 
         @media (min-width: 768px) {
 }
