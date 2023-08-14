@@ -61,70 +61,29 @@
             background-color: #555;
         }
 
-/* Style for the container that holds both tables */
-.table-container {
-    display: flex;
-    overflow-x: auto;
-}
-
-/* Style for the first table with sticky columns */
-.sticky-columns {
-    flex: 0 0 auto;
-    min-width: auto; /* Adjust as needed */
+table {
     border-collapse: collapse;
-}
-
-/* Style for the second table with scrollable columns */
-.scrollable {
-    flex: 1 1 auto;
-    min-width: auto; /* Adjust as needed */
-    border-collapse: collapse;
-}
-
-/* Style for table headers */
-table th {
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-/* Style for table cells */
-table td {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-/* Styling to make the first two columns sticky */
-.sticky-columns th,
-.sticky-columns td {
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: lightgray;
+  }
+  th:first-child,
+  th:nth-child(2),
+  td:first-child,
+  td:nth-child(2) {
     position: sticky;
     left: 0;
+    background-color: white;
+  }
+  th:nth-child(1) {
     z-index: 2;
-    background-color: #f2f2f2;
-}
-
-/* Styling for the rest of the columns */
-.scrollable th,
-.scrollable td {
-    background-color: #fff;
-}
-
-/* Hide vertical scrollbar on the first table */
-.sticky-columns {
-    overflow-y: hidden;
-}
-
-/* Hide horizontal scrollbar on both tables */
-.table-container {
-    overflow-x: hidden;
-}
-
-/* Show horizontal scrollbar when needed */
-.table-container:hover {
-    overflow-x: auto;
-}
+  }
 
         @media (min-width: 768px) {
 }
@@ -147,113 +106,94 @@ table td {
 </head>
 <body>
    <h1>Results</h1>
-   <div class="table-container">
-    <table class="sticky-columns">
-        <thead>
-            <tr>
-                <th>Item number</th>
-                <th>Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                <td>{{ row[0] }}</td>
-                <td>{{ row[1] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <table class="scrollable">
-        <thead>
-            <tr>
-                <th>Serving Size</th>
-                <th>Calories</th>
-            <th>Total Fat</th>
-            <th>Saturated Fat</th>
-            <th>Cholesterol</th>
-            <th>Sodium</th>
-            <th>Choline</th>
-            <th>Folate</th>
-            <th>Folic Acid</th>
-            <th>Niacin</th>
-            <th>Pantothenic Acid</th>
-            <th>Riboflavin</th>
-            <th>Thiamin</th>
-            <th>Vitamin A</th>
-            <th>Vitamin A Retinol Activity Equivalents</th>
-            <th>Carotene Alpha</th>
-            <th>Carotene Beta</th>
-            <th>Cryptoxanthin Beta</th>
-            <th>Lutein Zeaxanthin</th>
-            <th>Lycopene</th>
-            <th>Vitamin B12</th>
-            <th>Vitamin B6</th>
-            <th>Vitamin C</th>
-            <th>Vitamin D</th>
-            <th>Vitamin E</th>
-            <th>Tocopherol Alpha</th>
-            <th>Vitamin K</th>
-            <th>Calcium</th>
-            <th>Copper</th>
-            <th>Iron</th>
-            <th>Magnesium</th>
-            <th>Manganese</th>
-            <th>Phosphorous</th>
-            <th>Potassium</th>
-            <th>Selenium</th>
-            <th>Zinc</th>
-            <th>Protein</th>
-            <th>Alanine</th>
-            <th>Arginine</th>
-            <th>Aspartic Acid</th>
-            <th>Cystine</th>
-            <th>Glutamic Acid</th>
-            <th>Glycine</th>
-            <th>Histidine</th>
-            <th>Hydroxyproline</th>
-            <th>Isoleucine</th>
-            <th>Leucine</th>
-            <th>Lysine</th>
-            <th>Methionine</th>
-            <th>Phenylalanine</th>
-            <th>Proline</th>
-            <th>Serine</th>
-            <th>Threonine</th>
-            <th>Tryptophan</th>
-            <th>Tyrosine</th>
-            <th>Valine</th>
-            <th>Carbohydrate</th>
-            <th>Fiber</th>
-            <th>Sugars</th>
-            <th>Fructose</th>
-            <th>Galactose</th>
-            <th>Glucose</th>
-            <th>Lactose</th>
-            <th>Maltose</th>
-            <th>Sucrose</th>
-            <th>Fat</th>
-            <th>Saturated Fatty Acids</th>
-            <th>Monounsaturated Fatty Acids</th>
-            <th>Polyunsaturated Fatty Acids</th>
-            <th>Fatty Acids Total Trans</th>
-            <th>Alcohol</th>
-            <th>Ash</th>
-            <th>Caffeine</th>
-            <th>Theobromine</th>
-            <th>Water</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                {% for value in row[2:] %}
-                <td>{{ value }}</td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-         </tbody>
-    </table>
-   </div>
+<table>
+  <tr>
+    <th>Item number</th>
+    <th>Name</th>
+    <th>Serving Size</th>
+              <th>Calories</th>
+           <th>Total Fat</th>
+           <th>Saturated Fat</th>
+           <th>Cholesterol</th>
+           <th>Sodium</th>
+           <th>Choline</th>
+           <th>Folate</th>
+           <th>Folic Acid</th>
+           <th>Niacin</th>
+           <th>Pantothenic Acid</th>
+           <th>Riboflavin</th>
+           <th>Thiamin</th>
+           <th>Vitamin A</th>
+           <th>Vitamin A Retinol Activity Equivalents</th>
+           <th>Carotene Alpha</th>
+           <th>Carotene Beta</th>
+           <th>Cryptoxanthin Beta</th>
+           <th>Lutein Zeaxanthin</th>
+           <th>Lycopene</th>
+           <th>Vitamin B12</th>
+           <th>Vitamin B6</th>
+           <th>Vitamin C</th>
+           <th>Vitamin D</th>
+           <th>Vitamin E</th>
+           <th>Tocopherol Alpha</th>
+           <th>Vitamin K</th>
+           <th>Calcium</th>
+           <th>Copper</th>
+           <th>Iron</th>
+           <th>Magnesium</th>
+           <th>Manganese</th>
+           <th>Phosphorous</th>
+           <th>Potassium</th>
+           <th>Selenium</th>
+           <th>Zinc</th>
+           <th>Protein</th>
+           <th>Alanine</th>
+           <th>Arginine</th>
+           <th>Aspartic Acid</th>
+           <th>Cystine</th>
+           <th>Glutamic Acid</th>
+           <th>Glycine</th>
+           <th>Histidine</th>
+           <th>Hydroxyproline</th>
+           <th>Isoleucine</th>
+           <th>Leucine</th>
+           <th>Lysine</th>
+           <th>Methionine</th>
+           <th>Phenylalanine</th>
+           <th>Proline</th>
+           <th>Serine</th>
+           <th>Threonine</th>
+           <th>Tryptophan</th>
+           <th>Tyrosine</th>
+           <th>Valine</th>
+           <th>Carbohydrate</th>
+           <th>Fiber</th>
+           <th>Sugars</th>
+           <th>Fructose</th>
+           <th>Galactose</th>
+           <th>Glucose</th>
+           <th>Lactose</th>
+           <th>Maltose</th>
+           <th>Sucrose</th>
+           <th>Fat</th>
+           <th>Saturated Fatty Acids</th>
+           <th>Monounsaturated Fatty Acids</th>
+           <th>Polyunsaturated Fatty Acids</th>
+           <th>Fatty Acids Total Trans</th>
+           <th>Alcohol</th>
+           <th>Ash</th>
+           <th>Caffeine</th>
+           <th>Theobromine</th>
+    <th>Water</th>
+  </tr>
+  {% for row in data %}
+  <tr>
+    {% for value in row %}
+    <td>{{ value }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+
 </body>
 </html>
