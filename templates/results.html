@@ -108,22 +108,27 @@
 <body>
    <h1>Results</h1>
    <div class="table-container">
-       <table class="sticky-columns">
-           <tr>
-               <th>Item number</th>
-               <th>Name</th>
-           </tr>
-           {% for row in data %}
-           <tr>
-               <td>{{ row[0] }}</td>
-               <td>{{ row[1] }}</td>
-           </tr>
-           {% endfor %}
-       </table>
-       <table class="scrolling-data">
-           <tr>
-               <th>Serving Size</th>
-               <th>Calories</th>
+    <table class="sticky-columns">
+        <thead>
+            <tr>
+                <th>Item number</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table class="scrollable">
+        <thead>
+            <tr>
+                <th>Serving Size</th>
+                <th>Calories</th>
             <th>Total Fat</th>
             <th>Saturated Fat</th>
             <th>Cholesterol</th>
@@ -198,13 +203,16 @@
             <th>Theobromine</th>
             <th>Water</th>
         </tr>
-        {% for row in data %}
-        <tr>
-            {% for value in row %}
-            <td>{{ value }}</td>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {% for value in row[2:] %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
             {% endfor %}
-        </tr>
-        {% endfor %}
+        </tbody>
     </table>
-</body>
+</div>
 </html>
