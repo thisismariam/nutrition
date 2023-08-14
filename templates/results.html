@@ -72,18 +72,29 @@ table {
   }
   th {
     background-color: lightgray;
-  }
-  th:first-child,
-  th:nth-child(2),
-  td:first-child,
-  td:nth-child(2) {
-    position: sticky;
-    left: 0;
-    background-color: white;
-  }
-  th:nth-child(1) {
-    z-index: 2;
-  }
+ tr:first-child {
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+
+    th:first-child,
+    td:first-child {
+        position: sticky;
+        left: 0;
+        background-color: white;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        position: sticky;
+        left: 150px; /* Adjust this value based on your column width */
+        background-color: white;
+    }
+
+    th:nth-child(1) {
+        z-index: 2;
+    }
 
   tr:first-child {
     position: sticky;
@@ -115,7 +126,7 @@ table {
    <h1>Results</h1>
 <table>
   <tr>
-    <th>Item number</th>
+    <th>Item</th>
     <th>Name</th>
     <th>Serving Size</th>
               <th>Calories</th>
