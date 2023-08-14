@@ -3,8 +3,8 @@
 <head>
     <title>Nutritional Database - Results</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
- body {
+<style>
+    body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
         background-color: #f9f9f9;
@@ -61,6 +61,7 @@
         background-color: #555;
     }
 
+    /* Sticky Table Header and Columns */
     table {
         border-collapse: collapse;
         width: 100%;
@@ -82,7 +83,7 @@
     td:nth-child(2) {
         position: sticky;
         left: 0;
-        background-color: white;
+        background-color: #f2f2f2; /* Adjust background color for sticky columns */
     }
 
     th:first-child {
@@ -98,7 +99,7 @@
     tr:first-child th {
         position: sticky;
         top: 0;
-        background-color: white;
+        background-color: #f2f2f2; /* Adjust background color for sticky header */
     }
 
     @media (min-width: 768px) {
@@ -119,7 +120,8 @@
             font-size: 14px;
         }
     }
-    </style>
+</style>
+
 </head>
 <body>
    <h1>Results</h1>
